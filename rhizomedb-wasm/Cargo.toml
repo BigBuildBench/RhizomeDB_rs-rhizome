@@ -1,0 +1,35 @@
+[package]
+name = "rhizomedb-wasm"
+version = "0.1.0"
+description = "RhizomeDB wasm bindings"
+keywords = []
+categories = []
+include = ["/src", "README.md", "LICENSE-APACHE", "LICENSE-MIT"]
+license = "Apache-2.0"
+readme = "README.md"
+edition = "2021"
+rust-version = "1.67"
+documentation = "https://docs.rs/rhizomedb-wasm"
+repository = "https://github.com/rhizomedb/rs-rhizome/tree/main/rhizome-wasm"
+authors = ["Quinn Wilton <quinn@quinnwilton.com>"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+path = "src/lib.rs"
+
+[dependencies]
+
+[dev-dependencies]
+pretty_assertions = "1.3.0"
+wasm-bindgen-test = "0.3"
+
+[features]
+default = ["js"]
+full = ["js", "web"]
+js = [
+  "console_error_panic_hook",
+  "js-sys",
+  "wasm-bindgen",
+  "wasm-bindgen-futures"
+]
+web = ["web-sys"]

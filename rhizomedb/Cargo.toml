@@ -1,0 +1,28 @@
+[package]
+name = "rhizomedb"
+version = "0.1.0"
+description = "RhizomeDB"
+keywords = []
+categories = []
+include = ["/src", "README.md", "LICENSE-APACHE", "LICENSE-MIT"]
+license = "Apache-2.0"
+readme = "README.md"
+edition = "2021"
+rust-version = "1.67"
+documentation = "https://docs.rs/rhizomedb"
+repository = "https://github.com/rhizomedb/rs-rhizome/tree/main/rhizomedb"
+authors = ["Quinn Wilton <quinn@quinnwilton.com>"]
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+
+[dev-dependencies]
+pretty_assertions = "1.3.0"
+proptest = { version = "1.0" }
+tempfile = { version = "3.3" }
+
+[features]
+default = []
+test_utils = ["proptest"]
